@@ -317,7 +317,7 @@
       const thisCart = this;
       thisCart.dom.toogleTrigger.addEventListener('click', function(event){
         event.preventDefault();
-        thisCart.element.classList.toogle(classNames.cart.wrapperActive);
+        thisCart.dom.wrapper.classList.toogle(classNames.cart.wrapperActive);
      });
     
     }
@@ -349,6 +349,7 @@
 
       thisApp.initData();
       thisApp.initMenu();
+      thisApp.initCart();
     },
 
     initCart: function () {
@@ -361,5 +362,5 @@
 
 
   app.init();
-  app.initCart();
+  
 }
