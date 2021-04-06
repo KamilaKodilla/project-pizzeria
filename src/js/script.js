@@ -90,9 +90,7 @@
       thisProduct.initOrderForm();
       thisProduct.initAmountWidget();
       thisProduct.processOrder();
-      //thisProduct.prepareCartProductParams();
 
-      //console.log('new Product: ', thisProduct);
     }
     renderInMenu() {
       const thisProduct = this;
@@ -138,7 +136,6 @@
 
         /*find active product (product that has active class)*/
         const activeProduct = document.querySelector('.product.active');
-        //console.log('activeProduct: ', activeProduct);
 
         /*if there is active product and it's not thisProduct.element, remove class active from it */
         if (activeProduct !== null && activeProduct !== thisProduct.element) {
@@ -152,7 +149,7 @@
 
     initOrderForm() {
       const thisProduct = this;
-      //console.log('initOrderForm');
+      
       thisProduct.form.addEventListener('submit', function (event) {
         event.preventDefault();
         thisProduct.processOrder();
@@ -176,7 +173,6 @@
 
       // covert form to object structure e.g. { sauce: ['tomato'], toppings: ['olives', 'redPeppers']}
       const formData = utils.serializeFormToObject(thisProduct.form);
-      //console.log('formData', formData);
 
       // set price to default price
       let price = thisProduct.data.price;
@@ -185,13 +181,11 @@
       for (let paramId in thisProduct.data.params) {
         // determine param value, e.g. paramId = 'toppings', param = { label: 'Toppings', type: 'checkboxes'... }
         const param = thisProduct.data.params[paramId];
-        //console.log(paramId, param);
 
         // for every option in this category
         for (let optionId in param.options) {
           // determine option value, e.g. optionId = 'olives', option = { label: 'Olives', price: 2, default: true }
           const option = param.options[optionId];
-          //console.log(optionId, option);
 
           // check if there is param with a name of paramId in formData and if it includes optionId
           //if(formData[paramId] && formData[paramId].includes(optionId)) {
@@ -266,7 +260,6 @@
 
       // covert form to object structure e.g. { sauce: ['tomato'], toppings: ['olives', 'redPeppers']}
       const formData = utils.serializeFormToObject(thisProduct.form);
-      //console.log('formData', formData);
 
       const params = {};
       // for every category (param)...
@@ -302,8 +295,6 @@
 
       thisWidget.getElements(element);
       thisWidget.setValue(thisWidget.input.value);
-      //console.log('AmountWidget:', thisWidget);
-      //console.log('constructor arguments: ', element);
       thisWidget.initActions();
     }
 
@@ -358,7 +349,6 @@
       const thisCart = this;
       thisCart.products = [];
       thisCart.getElements(element);
-      //console.log('new Cart', thisCart);
       thisCart.initActions();
     }
 
@@ -375,6 +365,8 @@
 
       /* add element to menu */
       thisCart.dom.productList.appendChild(generatedDOM);
+      thisCart.products.push(menuProduct);
+      console.log('thisCart.products', thisCart.products);
     }
 
     getElements(element) {
@@ -394,11 +386,26 @@
     }
   }
   /**/
+
+  class CartProduct {
+    constructor (menuProduct, element){
+      thisCartProduct = this;
+      thisCartProduct.id = menuProduct.id;
+      thisCartProduct.name = menuProduct.name;
+      thisCartProduct.amount = menuProduct.amount;
+      thisCartProduct.priceSingle = menuProduct.priceSingle;
+      thisCartProduct.price = menuProduct.price;
+      thisCartProduct.params = menuProduct.params;
+      thisCart.getElements(element);
+      console.log('thisCartProdyct: ', thisCartProduct);
+
+    }
+  }
+
   const app = {
 
     initMenu: function () {
       const thisApp = this;
-      console.log('thisApp.data:', thisApp.data);
       for (let productData in thisApp.data.products) {
         new Product(productData, thisApp.data.products[productData]);
       }
