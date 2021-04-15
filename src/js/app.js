@@ -49,7 +49,7 @@ const app = {
       function(event) {
         app.cart.add(event.detail.product);
       }
-    })
+    });
   },
 
 };
