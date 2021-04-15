@@ -15,7 +15,7 @@ const app = {
     let pageMatchingHash = thisApp.pages[0].id;
 
     for (let page of thisApp.pages) {
-      if (page.id = idFromHash) {
+      if (page.id == idFromHash) {
         pageMatchingHash = page.id;
         break;
       }
@@ -105,10 +105,9 @@ const app = {
     thisApp.cart = new Cart(cartElem);
 
     thisApp.productList = document.querySelector(select.containerOf.menu);
-    thisApp.productList.addEventListener('add-to-cart', {
+    thisApp.productList.addEventListener('add-to-cart', 
       function(event) {
         app.cart.add(event.detail.product);
-      }
     });
   },
 
