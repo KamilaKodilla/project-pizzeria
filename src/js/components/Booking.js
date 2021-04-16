@@ -1,5 +1,5 @@
-import { templates, select } from "../settings.js";
-import AmountWidget from '../components/AmountWidget.js'
+import { templates, select } from '../settings.js';
+import AmountWidget from '../components/AmountWidget.js';
 
 class Booking {
   constructor(element) {
@@ -22,7 +22,7 @@ class Booking {
     thisBooking.dom.peopleAmount = thisBooking.dom.wrapper.querySelector(select.booking.peopleAmount);
     thisBooking.dom.hoursAmount = thisBooking.dom.wrapper.querySelector(select.booking.hoursAmount);
   
-}
+  }
 
   initWidgets(){
     const thisBooking = this;
@@ -35,7 +35,7 @@ class Booking {
     thisBooking.dom.hoursAmount.addEventListener('updated', function(){
 
     });
-}
+  }
 
 }
 
