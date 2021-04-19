@@ -9,7 +9,7 @@
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="./vendor/range-slider.min.css">
-  <link rel="stylesheet" href="vendor/flickity.min.css" media="screen">
+  <link rel="stylesheet" href="./vendor/flickity.min.css" media="screen">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -79,17 +79,18 @@
     <div class="home-container">
       <div class="options">
           <div class="order-online">
-              <a href="#order">
+              <a href="#/order">
               <h2>ORDER ONLINE</h2>
               <p>Delicious food delivered to your doors</p>
               </a>      
           </div>
 
           <div class="book-table">
-              <a href="#book">
+              <a href="#/book">
               <h2>BOOK TABLE</h2>
-              <p>Tralalalalalalalalalala</p>
-          </a>  
+              <p>Choose a nice place to eat</p>
+          </a>
+          </div>  
 
           <div class="opening-hours">
               <h3>OPENING HOURS</h3>
@@ -97,61 +98,61 @@
           </div>
       </div>
 
-      <div class="main-carousel">
+      <div class="main-carousel" data-flickity>
           <div class="carousel-cell">
               <div class="carousel-image">
                   <img src="images/assets/pizza-3.jpg">
               </div>
               <div class="carousel-post">
                   <h3>Great time</h3>
-                  <p></p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et venenatis velit. Praesent elementum viverra risus nec placerat. Aliquam a sagittis ex, ut dapibus risus.</p>
                   <p>Ania Nowak</p>
               </div>
           </div>
           <div class="carousel-cell">
               <div class="carousel-image">
-                  <img src="images/assets/pizza-3.jpg">
+                  <img src="images/assets/pizza-4.jpg">
               </div>
               <div class="carousel-post">
-                  <h3>Great time</h3>
-                  <p></p>
+                  <h3>Delicious food</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et venenatis velit. Praesent elementum viverra risus nec placerat. Aliquam a sagittis ex, ut dapibus risus.</p>
                   <p>Ania Nowak</p>
               </div>
           </div>
           <div class="carousel-cell">
               <div class="carousel-image">
-                  <img src="images/assets/pizza-3.jpg">
+                  <img src="images/assets/pizza-5.jpg">
               </div>
               <div class="carousel-post">
-                  <h3>Great time</h3>
-                  <p></p>
+                  <h3>Fantastic atmosphere</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et venenatis velit. Praesent elementum viverra risus nec placerat. Aliquam a sagittis ex, ut dapibus risus.</p>
                   <p>Ania Nowak</p>
               </div>
           </div>
       </div>
       
       <div class="gallery">
-          <div class="box">
-              <img src="images/assets/pizza-4.jpg">
-              <ul class="overlay">
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
-              </ul>
-          </div>
-          <div class="box">
-              <img src="images/assets/pizza-5.jpg">
-              <ul class="overlay">
-                  <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                  <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
-              </ul>
-          </div>
-          <div class="box">
-              <img src="images/assets/pizza-6.jpg">
-              <ul class="overlay">
-                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
-              </ul>
-          </div>
+        <div class="box">
+          <img src="images/assets/pizza-4.jpg">
+          <ul class="overlay">
+            <li><a href="#"><i class="fas fa-heart"></i></a></li>
+            <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
+          </ul>
+        </div>
+        <div class="box">
+          <img src="images/assets/pizza-5.jpg">
+          <ul class="overlay">
+            <li><a href="#"><i class="fas fa-heart"></i></a></li>
+            <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
+          </ul>
+        </div>
+        <div class="box">
+          <img src="images/assets/pizza-6.jpg">
+          <ul class="overlay">
+            <li><a href="#"><i class="fas fa-heart"></i></a></li>
+            <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
+          </ul>
+        </div>
           <div class="box">
               <img src="images/assets/pizza-7.jpg">
               <ul class="overlay">
@@ -357,7 +358,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="./vendor/range-slider.min.js"></script>
-  <script src="vendor/flickity.pkgd.min.js"></script>
+  <script src="./vendor/flickity.pkgd.min.js"></script>
   <script src="js/app.js" type="module"></script>
 </body>
 </html>

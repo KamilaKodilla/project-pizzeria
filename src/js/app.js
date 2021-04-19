@@ -2,14 +2,16 @@ import { settings, select, classNames } from './settings.js';
 import Product from './components/Product.js';
 import Cart from './components/Cart.js';
 import Booking from './components/Booking.js';
+import Home from './components/Home.js';
 
-const app = {
+export const app = {
 
   initPages: function () {
     const thisApp = this;
 
     thisApp.pages = document.querySelector(select.containerOf.pages).children;
     thisApp.navLinks = document.querySelectorAll(select.nav.links);
+    console.log(thisApp.navLinks);
 
     const idFromHash = window.location.hash.replace('#/', '');
 
@@ -26,6 +28,7 @@ const app = {
 
     for (let link of thisApp.navLinks) {
       link.addEventListener('click', function (event) {
+        console.log(this);
         const clickedElement = this;
         event.preventDefault();
 
@@ -71,12 +74,19 @@ const app = {
     }
   },
 
+  initHome: function(){
+    const thisApp = this;
+
+    const homeContainer = document.querySelector(select.containerOf.home);
+    thisApp.home = new Home(homeContainer);
+  },
+
   initBooking: function(){
     const thisApp = this;
 
     const bookingContainer = document.querySelector(select.containerOf.booking);
     thisApp.booking = new Booking(bookingContainer);
-  } ,
+  },
 
   initData: function () {
     const thisApp = this;
@@ -102,10 +112,12 @@ const app = {
   init: function () {
     const thisApp = this;
     
-    thisApp.initPages();
+    thisApp.initHome();
     thisApp.initData();
     thisApp.initCart();
     thisApp.initBooking();
+    thisApp.initPages();
+
   },
 
   initCart: function () {
