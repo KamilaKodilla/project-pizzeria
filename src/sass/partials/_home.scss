@@ -98,6 +98,7 @@
     font-size: 13px;
     margin-right: 20px;
   }
+
   p:nth-child(3){
     font-size: 13px;
     font-style: italic;
@@ -139,12 +140,12 @@
     }
   }
 
-    .overlay {
-      position: absolute;
-      top: 40%;
-      left: 35%;
-      transform: translate(-50%, -50%);
-    }
+  .overlay {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+  }
 
   .box:hover {
     img {
